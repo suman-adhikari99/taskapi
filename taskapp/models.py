@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -10,6 +11,12 @@ class Register(models.Model):
     LastName=models.CharField(max_length=100)
     def __str__(self) :
         return f'{self.FirstName}'
+
+class Task(models.Model):
+    Title=models.CharField(max_length=100)
+    Description=models.TextField()
+    TaskStatus=models.BooleanField()
+    TaskID=models.IntegerField(unique=True)
 
 
 
